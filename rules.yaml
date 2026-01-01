@@ -1,0 +1,7 @@
+rules:
+  - name: hello-world
+    trigger:
+      type: startup
+    action:
+      type: shell
+      command: "echo Automation engine is working shell ✅"
