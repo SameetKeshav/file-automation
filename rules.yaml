@@ -1,0 +1,8 @@
+rules:
+  - name: file_test
+    trigger:
+      type: file
+      path: ~/automation-test/input
+    action:
+      type: shell
+      command: echo .
