@@ -1,4 +1,4 @@
-import asyncio
+from triggers.startup import StartupTrigger
 from .triggers.file import FileTrigger
 from .triggers.time import TimeTrigger
 from .actions.shell import ShellAction
@@ -13,6 +13,8 @@ async def run_rule(rule):
         trigger = FileTrigger(rule.trigger.config["path"])
     elif rule.trigger.type == "time":
         trigger = TimeTrigger(rule.trigger.config["every"])
+    elif rule.trigger.type == "startup":
+        trigger = StartupTrigger()
     else:
         raise ValueError("Unknown trigger")
 
